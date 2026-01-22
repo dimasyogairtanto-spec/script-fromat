@@ -1,0 +1,16 @@
+#!/bin/sh
+ROOT_PART="/dev/sdX1"
+BOOT_PART="/dev/sdx2"
+DATA_PART="/dev/sdx3"
+
+
+echo "==> Format root"
+mkfs.ext4 -b 4096 ${ROOT_PART} && 
+mount $ROOT_PART /mnt &&
+echo "==> Format boot"
+mkfs.vfat -F32 -S 4096 -n BOOT ${BOOT_PART} &&
+mount $BOOT_PART /mnt/boot &&
+echo "==> Format data"
+mkfs.ext4 -b 4096 ${BOOT_PART} &&
+mount $DATA_PART /mnt/home &&
+genfstab -U /mnt >> /mnt/etc/fstab
