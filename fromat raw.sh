@@ -1,4 +1,4 @@
-umount -r /mnt &&
+umount -R /mnt &&
 mkfs.ext4 -b 4096 /dev/sda1 &&
 mount /dev/sda1 /mnt &&
 mkfs.vfat -F32 -S 4096 -n BOOT /dev/sda2 &&
