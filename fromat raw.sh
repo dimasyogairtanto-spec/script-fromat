@@ -1,4 +1,6 @@
 umount -R /mnt &&
+umount -R /mnt/boot &&
+umount -R /mnt/home &&
 mkfs.ext4 -b 4096 /dev/sda1 &&
 mount /dev/sda1 /mnt &&
 mkdir /mnt/boot &&
