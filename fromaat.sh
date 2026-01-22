@@ -1,7 +1,7 @@
 #!/bin/sh
-ROOT_PART="/dev/sdX1"
-BOOT_PART="/dev/sdx2"
-DATA_PART="/dev/sdx3"
+ROOT_PART="/dev/sda1"
+BOOT_PART="/dev/sda2"
+DATA_PART="/dev/sda3"
 
 
 echo "==> Format root"
