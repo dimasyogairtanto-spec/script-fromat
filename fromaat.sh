@@ -3,7 +3,7 @@ ROOT_PART="/dev/sda1"
 BOOT_PART="/dev/sda2"
 DATA_PART="/dev/sda3"
 
-
+umount -R /mnt
 echo "==> Format root"
 mkfs.ext4 -b 4096 ${ROOT_PART} && 
 mount $ROOT_PART /mnt &&
