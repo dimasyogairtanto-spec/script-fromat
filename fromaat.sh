@@ -15,4 +15,5 @@ echo "==> Format data"
 mkdir /mnt/home &&
 mkfs.ext4 -b 4096 ${DATA_PART} &&
 mount $DATA_PART /mnt/home &&
+pacstrap /mnt base linux &&
 genfstab -U /mnt > /mnt/etc/fstab
