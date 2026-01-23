@@ -18,5 +18,6 @@ sed <<EOF
      initrd     /efi/recovery/initramfs-linux.img
      options    archisobasedir=efi/recovery archisolabel=BOOT copytoram' /mnt/loader/entries/recovery.conf
      
-     EOF
+     EOF &&
+reboot
 
