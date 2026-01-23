@@ -5,7 +5,7 @@ read -p "partisi fd: " fd
 echo "==> Format boot"
 mkfs.vfat -F32 -S 4096 -n BOOT ${boot} &&
 mount -o uid=0,gid=0,fmask=0077,dmask=0077 "$boot" /mnt &&
-mount "$fd" /dev/opt &&
+mount "$fd" /opt &&
 mkdir /mnt/{efi,loader,kernel} &&
 mkdir /mnt/efi{linux,boot,recovery,systemd} &&
 bootctl --path=/mnt install &&
