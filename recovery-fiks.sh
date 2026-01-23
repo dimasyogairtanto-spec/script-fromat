@@ -11,13 +11,6 @@ mkdir /mnt/efi/{linux,boot,recovery,systemd} &&
 bootctl --path=/mnt install &&
 cp /opt/arch/boot/x86_64/* /mnt/efi/recovery &&
 cp -r /opt/arch/x86_64 /mnt/efi/recovery &&
-sed <<EOF
-    'title      recovery
-     versions   archiso
-     linux      /efi/recovery/vmlinuz-linux
-     initrd     /efi/recovery/initramfs-linux.img
-     options    archisobasedir=efi/recovery archisolabel=BOOT copytoram' /mnt/loader/entries/recovery.conf
-     
-     EOF &&
+cp -r /script-format/konfigurasi-loader /mnt/loader/entries/recovery.conf
 reboot
 
